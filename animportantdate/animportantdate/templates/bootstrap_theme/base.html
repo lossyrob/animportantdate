@@ -6,7 +6,7 @@
 
 {% block html_head_base %}
   <head>
-    <title>Josh and Chris are getting married | animportant.date</title>
+    <title>Annie and Rob are getting married | wilsonemanuele.com</title>
     <link type="image/x-icon" rel="icon" href="{% static "favicon.ico" %}">
     <link type="image/x-icon" rel="shortcut icon" href="{% static "favicon.ico" %}">
     <link href="https://fonts.googleapis.com/css?family=Muli:200,200i,300i|Open+Sans:300,700" rel="stylesheet">
@@ -15,9 +15,9 @@
       <link rel="stylesheet" type="text/x-scss" href="{% static "base.scss" %}">
     {% endcompress %}
 
-    <meta property="og:title" content="Josh and Chris are getting married | animportant.date">
-    <meta property="og:site_name" content="Josh and Chris are getting married | animportant.date">
-    <meta property="og:image" content="{% static "images/og_image.jpg" %}">
+    <meta property="og:title" content="Rob and Annie are getting married | animportant.date">
+    <meta property="og:site_name" content="Rob and Annie are getting married | animportant.date">
+    <meta property="og:image" content="{% static "images/rob-annie-1.jpg" %}">
     <meta property="og:url" content="https://animportant.date/">
 
     <meta content="width=device-width, height=device-height" name="viewport">
@@ -32,7 +32,7 @@
       <nav class="navbar navbar-default navbar-static-top">
         <div class="navbar-header">
           <a href="/" class="navbar-brand">
-            An Important Date
+            Annie & Rob
           </a>
         </div>
         <a href="/#Navigation" id="NavTrigger" title="Nav Toggle Open"><span>Menu</span></a>
@@ -46,7 +46,7 @@
             {% if request.session.group_id %}
             <li class="guest"><a href="/guest">Your Information</a></li>
             {% endif %}
-            <li class="colophon"><a href="/colophon">Colophon</a></li>
+            <li class="about"><a href="/about">About</a></li>
           </ul>
         </div>
       </nav>
@@ -74,18 +74,6 @@
     {% compress js %}
       <script type="text/javascript" src="{% static "base.js" %}"></script>
     {% endcompress %}
-    <script>
-      /*
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-      ga('create', '', 'auto');
-      ga('require', 'outboundLinkTracker');
-      ga('send', 'pageview');
-      */
-    </script>
     <script async src="{% static "autotrack.js" %}"></script>
   </body>
 {% endblock html_body %}

@@ -27,7 +27,7 @@ BASE_DIR = PACKAGE_ROOT
 SECRET_KEY = 'bleepbloop'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 if "DJANGO_ALLOWED_HOSTS" in os.environ:
     ALLOWED_HOSTS = os.environ["DJANGO_ALLOWED_HOSTS"].split(",")
@@ -81,6 +81,12 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'animportantdate.wsgi.application'
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
+    }
+}
 
 
 # Database
@@ -159,16 +165,15 @@ COMPRESS_PRECOMPILERS = (
 )
 
 MANAGERS = [
-    ("Chris", "_@chrisjrn.com"),
-    ("Josh", "meow@josh.cat"),
+    ("Rob", "wilson.emanuele.wedding@gmail.com")
 ]
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 ''' All mailouts bcc into the following address list '''
-MAILOUTS_ARCHIVE_ADDRESS = ["bcc_archive@example.com"]
+MAILOUTS_ARCHIVE_ADDRESS = ["wilson.emanuele.wedding+mailouts@gmail.com"]
 
 ''' All mailouts are sent from this address '''
-MAILOUTS_FROM_ADDRESS = '"Alice and Bob" <from_address@example.com>'
+MAILOUTS_FROM_ADDRESS = '"Annie and Rob" <wilson.emanuele.wedding@gmail.com>'
 
 try:
     from local_settings import *

@@ -186,7 +186,7 @@ body {
 }
 
 body.home {
-  background-image: url(/static/images/home.jpg);
+  background-image: url(/static/images/rob-annie-1.jpg);
   background-color: #58c8f6;
 
   main {
@@ -219,7 +219,7 @@ body.home {
 }
 
 body.story {
-  background-image: url(/static/images/story.jpg);
+  background-image: url(/static/images/wilson_emanuele_running.jpg);
   background-color: #87c1e9;
 
   h1, h2, h3, h4, h5, h6 {
@@ -228,7 +228,7 @@ body.story {
 }
 
 body.detail {
-  background-image: url(/static/images/details.jpg);
+  background-image: url(/static/images/camp_oak_hill.jpg);
   background-color: #063d90;
 
   main {
@@ -241,22 +241,22 @@ body.detail {
 }
 
 body.gift {
-  background-image: url(/static/images/gifts.jpg);
+  background-image: url(/static/images/annie-engagement-spot.jpg);
   background-color: #58c8f6;
 }
 
 body.photo {
-  background-image: url(/static/images/photos.jpg);
+  background-image: url(/static/images/wilson-emanuele-rainbow.jpg);
   background-color: #d8c5b7;
 }
 
-body.colophon {
-  background-image: url(/static/images/colophon.jpg);
+body.about {
+  background-image: url(/static/images/banteay-srei.jpg);
   background-color: #063d90;
 }
 
 body.guest {
-  background-image: url(/static/images/guest.jpg);
+  background-image: url(/static/images/rob-engagement-spot.jpg);
   background-color: #0544ab;
 
   .intro {
@@ -281,7 +281,7 @@ body.detail li.detail,
 body.registry li.registry,
 body.photo li.photo,
 body.guest li.guest,
-body.colophon li.colophon {
+body.about li.about {
   a,
   a:hover,
   a:focus {
