@@ -31,7 +31,7 @@ class GroupForm(forms.ModelForm):
         self.fields[field].required = True
 
     def __init__(self, *a, **k):
-        super().__init__(*a, **k)
+        super(GroupForm, self).__init__(*a, **k)
         required_fields = [
             "main_email",
             "address_1",
@@ -58,7 +58,7 @@ class PersonForm(forms.ModelForm):
         self.fields[field].required = True
 
     def __init__(self, *a, **k):
-        super().__init__(*a, **k)
+        super(PersonForm, self).__init__(*a, **k)
         required_fields = [
             "name",
             "rsvp_status"
