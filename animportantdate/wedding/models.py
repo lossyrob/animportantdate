@@ -97,7 +97,7 @@ class Person(models.Model):
         default=RSVP_UNKNOWN,
     )
     name_flagged = models.BooleanField()
-    dietary_restrictions = models.CharField(max_length=255)
+    dietary_restrictions = models.CharField(max_length=255, blank=True)
 
 
 class Event(models.Model):
