@@ -250,6 +250,11 @@ body.photo {
   background-color: #d8c5b7;
 }
 
+body.savethedate {
+  background-image: url(/static/images/save-the-date/date-grab.jpg);
+  background-color: #063d90;
+}
+
 body.about {
   background-image: url(/static/images/banteay-srei.jpg);
   background-color: #063d90;
@@ -281,6 +286,7 @@ body.detail li.detail,
 body.registry li.registry,
 body.photo li.photo,
 body.guest li.guest,
+body.savethedate li.savethedate,
 body.about li.about {
   a,
   a:hover,
@@ -288,6 +294,10 @@ body.about li.about {
     color: #555;
     background-color: #e7e7e7;
   }
+}
+
+img.savethedate {
+    width: 100%;
 }
 
 @media (min-width: 768px) {
@@ -475,4 +485,8 @@ body.about li.about {
       }
     }
   }
+}
+
+body.savethedate main {
+    margin: 110px 0 900px 0;
 }

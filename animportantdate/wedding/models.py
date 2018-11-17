@@ -16,6 +16,8 @@ class Group(models.Model):
         verbose_name="Confirmation Code",
     )
 
+    main_email = models.EmailField()
+
     address_1 = models.CharField(
         max_length=80,
         blank=True,
@@ -50,6 +52,15 @@ class Group(models.Model):
         blank=True,
     )
 
+    favorite_dancing_songs = models.TextField(
+        blank=True,
+        verbose_name="What's your favorite songs to dance to?"
+    )
+    comments = models.TextField(
+        blank=True,
+        verbose_name="Any additional comments?"
+    )
+
     # 4 chars to allow for ICAO if absolutely necessary
     home_airport = models.CharField(
         max_length=4,
@@ -79,14 +90,14 @@ class Person(models.Model):
     )
 
     name = models.CharField(max_length=255)
-    email = models.EmailField()
+    email = models.EmailField(null=True, blank=True)
     group = models.ForeignKey(Group)
     rsvp_status = models.IntegerField(
         choices=RSVP_CHOICES,
         default=RSVP_UNKNOWN,
     )
     name_flagged = models.BooleanField()
-    dietary_restrictions = models.TextField(blank=True)
+    dietary_restrictions = models.CharField(max_length=255)
 
 
 class Event(models.Model):

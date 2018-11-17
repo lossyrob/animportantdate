@@ -53,13 +53,23 @@ def guest_details(request):
         prefix="group",
     )
 
-    if request.POST and group_form.is_valid():
+    person_forms = list(map(
+        lambda tup: forms.PersonForm(
+            request.POST or None,
+            instance=tup[1],
+            prefix="person_{}".format(tup[0])
+        ), enumerate(group.person_set.all())))
+
+    if request.POST and group_form.is_valid() and all(map(lambda f: f.is_valid(), person_forms)):
         group_form.save()
+        for f in person_forms:
+            f.save()
         messages.success(request, "Thank you! We've got your contact details.")
         mail_alerts.group_contact_update(group)
 
     data = {
         "group_form": group_form,
+        "person_forms": person_forms,
         "group": group,
         "body_class": "guest",
     }
@@ -79,7 +89,6 @@ def get_group(request):
         return group
     else:
         return None
-
 
 def content_page(request, page_name=None):
     data = {

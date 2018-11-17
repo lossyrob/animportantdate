@@ -15,6 +15,7 @@ class GroupForm(forms.ModelForm):
     class Meta:
         model = models.Group
         fields = [
+            "main_email",
             "telephone",
             "address_1",
             "address_2",
@@ -22,6 +23,8 @@ class GroupForm(forms.ModelForm):
             "address_state_province",
             "address_postal_code",
             "address_country",
+            "favorite_dancing_songs",
+            "comments"
         ]
 
     def make_required(self, field):
@@ -30,11 +33,35 @@ class GroupForm(forms.ModelForm):
     def __init__(self, *a, **k):
         super().__init__(*a, **k)
         required_fields = [
+            "main_email",
             "address_1",
             "address_city",
             "address_postal_code",
             "address_country",
             "telephone",
+        ]
+        for i in required_fields:
+            self.make_required(i)
+
+class PersonForm(forms.ModelForm):
+
+    class Meta:
+        model = models.Person
+        fields = [
+            "name",
+            "email",
+            "rsvp_status",
+            "dietary_restrictions"
+        ]
+
+    def make_required(self, field):
+        self.fields[field].required = True
+
+    def __init__(self, *a, **k):
+        super().__init__(*a, **k)
+        required_fields = [
+            "name",
+            "rsvp_status"
         ]
         for i in required_fields:
             self.make_required(i)

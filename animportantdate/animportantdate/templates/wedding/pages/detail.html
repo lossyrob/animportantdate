@@ -7,7 +7,7 @@
   <h1>Where &amp; When</h1>
 </div>
 
-<p>Our big day and celebrations are taking place in June of 2018 at <a href="https://www.campoakhillpa.org/">Camp Oak Hill</a> in Nottingham, PA. You&rsquo;ll find details about all of the events on this page as plans come together.</p>
+<p>Our big day and celebrations are taking place in June of 2018 near Lancaster, PA. You&rsquo;ll find details about all of the events on this page as plans come together.</p>
 <br>
 {% if not request.session.group_id %}
 <p class="alert alert-info">To see details about the invite-only events, enter the confirmation code we sent on the
@@ -23,7 +23,8 @@
 
 <div>
     <h2>{{ event.name }}</h2>
-    <h3>{{ event.address }}</h3>
+    <h3>{{ event.date_time }}</h3>
+    <h4><a href="{{ event.directions_url }}" target="_blank">{{ event.address }}</a></h4>
 
     <p>{{ event.description }}</p>
 </div>
