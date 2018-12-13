@@ -16,7 +16,7 @@ class Group(models.Model):
         verbose_name="Confirmation Code",
     )
 
-    main_email = models.EmailField()
+    main_email = models.EmailField(blank=True)
 
     address_1 = models.CharField(
         max_length=80,
@@ -56,6 +56,7 @@ class Group(models.Model):
         blank=True,
         verbose_name="What's your favorite songs to dance to?"
     )
+
     comments = models.TextField(
         blank=True,
         verbose_name="Any additional comments?"
