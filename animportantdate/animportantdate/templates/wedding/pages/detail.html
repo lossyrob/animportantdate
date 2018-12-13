@@ -16,10 +16,11 @@
 
 {% else %}
 
-{% for event in group.events.get_queryset %}
-
 <p class="alert alert-info">Below you&rsquo;ll find details about the invite-only events including date, time, and location as well as travel and lodging advice. Make sure to keep
     <a href="/guest">your information</a> up to date so we can stay in touch with you and yours.</p>
+
+
+{% for event in group.events.get_queryset %}
 
 <div>
     <h2>{{ event.name }}</h2>
