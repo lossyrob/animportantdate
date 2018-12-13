@@ -28,25 +28,12 @@ class Group(models.Model):
         blank=True,
         verbose_name="Address Line 2",
     )
-    address_city = models.CharField(
+    address_3 = models.CharField(
         max_length=80,
         blank=True,
-        verbose_name="City or Suburb",
+        verbose_name="Adress Line 3",
     )
-    address_state_province = models.CharField(
-        max_length=80,
-        blank=True,
-        verbose_name="State or Province",
-    )
-    address_postal_code = models.CharField(
-        max_length=80,
-        blank=True,
-        verbose_name="Postal Code",
-    )
-    address_country = CountryField(
-        blank=True,
-        verbose_name="Country"
-    )
+
     telephone = models.CharField(
         max_length=20,
         blank=True,
@@ -55,6 +42,11 @@ class Group(models.Model):
     favorite_dancing_songs = models.TextField(
         blank=True,
         verbose_name="What's your favorite songs to dance to?"
+    )
+
+    changes = models.TextField(
+        blank=True,
+        verbose_name="Any changes to your information above not captured by the form?"
     )
 
     comments = models.TextField(

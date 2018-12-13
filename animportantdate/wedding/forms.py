@@ -19,11 +19,9 @@ class GroupForm(forms.ModelForm):
             "telephone",
             "address_1",
             "address_2",
-            "address_city",
-            "address_state_province",
-            "address_postal_code",
-            "address_country",
+            "address_3",
             "favorite_dancing_songs",
+            "changes",
             "comments"
         ]
 
@@ -35,9 +33,7 @@ class GroupForm(forms.ModelForm):
         required_fields = [
             "main_email",
             "address_1",
-            "address_city",
-            "address_postal_code",
-            "address_country",
+            "address_3",
             "telephone",
         ]
         for i in required_fields:
