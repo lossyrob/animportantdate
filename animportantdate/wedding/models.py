@@ -11,7 +11,7 @@ class Group(models.Model):
         return self.display_name
 
     pnr = models.CharField(
-        max_length=6,
+        max_length=10,
         unique=True,
         verbose_name="Confirmation Code",
     )
