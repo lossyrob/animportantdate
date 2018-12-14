@@ -55,14 +55,19 @@ class Command(BaseCommand):
 
                 group.save()
 
-                # Events
+                ### Events ###
                 if row['Rehearsal'] == 'x':
                     group.events.add(rehearsal)
                 else:
                     group.events.remove(rehearsal)
 
-                for event in [ceremony, festival]:
-                    group.events.add(event)
+                group.events.add(ceremony)
+
+                # Don't invite people to the festival yet
+                group.events.remove(festival)
+
+
+                #########
 
                 group.save()
 
