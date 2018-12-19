@@ -5,7 +5,7 @@ from django.utils.translation import ugettext_lazy as _
 class AuthForm(forms.Form):
 
     pnr = forms.CharField(
-        max_length=6,
+        max_length=20,
         label="Confirmation code",
     )
 
