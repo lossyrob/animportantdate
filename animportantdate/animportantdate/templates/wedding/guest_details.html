@@ -20,12 +20,13 @@
     </ul>
   {% endif %}
 
-  <p>Please complete the form so that we can send your invitations and keep in touch:</p>
+    <p>Please complete the form so that we can send your invitations and keep in touch:</p>
 </div>
 
 <div class="row">
     <div class="col-xs-8">
         <form method="POST">
+            <p>{{ form.errors }}</p>
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">Contact Information</h3>

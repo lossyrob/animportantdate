@@ -53,23 +53,29 @@ def guest_details(request):
         prefix="group",
     )
 
-    person_forms = list(map(
-        lambda tup: forms.PersonForm(
-            request.POST or None,
-            instance=tup[1],
-            prefix="person_{}".format(tup[0])
-        ), enumerate(group.person_set.all())))
+    # person_forms = list(map(
+    #     lambda tup: forms.PersonForm(
+    #         request.POST or None,
+    #         instance=tup[1],
+    #         prefix="person_{}".format(tup[0])
+    #     ), enumerate(group.person_set.all())))
 
-    if request.POST and group_form.is_valid() and all(map(lambda f: f.is_valid(), person_forms)):
+    if request.POST and group_form.is_valid():
         group_form.save()
-        for f in person_forms:
-            f.save()
         messages.success(request, "Thank you! We've got your contact details.")
-        mail_alerts.group_contact_update(group)
+        # mail_alerts.group_contact_update(group)
+
+    # if request.POST and group_form.is_valid() and all(map(lambda f: f.is_valid(), person_forms)):
+    #     group_form.save()
+    #     for f in person_forms:
+    #         f.save()
+    #     messages.success(request, "Thank you! We've got your contact details.")
+    #     mail_alerts.group_contact_update(group)
+
 
     data = {
         "group_form": group_form,
-        "person_forms": person_forms,
+        # "person_forms": person_forms,
         "group": group,
         "body_class": "guest",
     }
