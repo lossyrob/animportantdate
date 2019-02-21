@@ -7,7 +7,7 @@
   <h1>Where &amp; When</h1>
 </div>
 
-<p>Our big day and celebrations are taking place in June of 2018 near Lancaster, PA. You&rsquo;ll find details about all of the events on this page as plans come together.</p>
+<p>Our big day and celebrations are taking place in June of 2019 near Lancaster, PA. You&rsquo;ll find details about all of the events on this page as plans come together.</p>
 <br>
 {% if not request.session.group_id %}
 <p class="alert alert-info">To see details about the invite-only events, enter the confirmation code we sent on the
@@ -19,9 +19,34 @@
 <p class="alert alert-info">Below you&rsquo;ll find details about the invite-only events including date, time, and location as well as travel and lodging advice. Make sure to keep
     <a href="/guest">your information</a> up to date so we can stay in touch with you and yours.</p>
 
+<div>
+    <h1>Hotels</h1>
+    <h3>Fairfield Inn & Suites Kennett Square Brandywine Valley (<a href="https://goo.gl/maps/pYvV6GJzEEM2">map</a>)</h3>
+    <h4>Rate: $179.00 a night</h4>
+    <h4><a href="http://www.marriott.com/meeting-event-hotels/group-corporate-travel/groupCorp.mi?resLinkData=Wilson-Emanuele%20Wedding%5Ephlks%60WEWWEWA%7CWEWWEWB%60179.00%60USD%60false%604%606/7/19%606/9/19%605/10/19&app=resvlink&stop_mobi=yes">LINK FOR BOOKING</a></h4>
+    <hr>
+    <h3>Best Western Northeast Inn (<a href="https://goo.gl/maps/5JLNFtPA24m">map</a>)</h3>
+    <h4>Rate: $135.99 a night</h4>
+    <h4>TO BOOK: Call (410) 287-5450 and book for "Wilson Emanuele Wedding"</h4>
+    <hr>
+    <h3>Choose your own!</h3>
+    <h4>Rate: $???.?? a night</h4>
+    <h4>See <a href="https://www.campoakhillpa.org/local-information/local-lodging/">this page at the Camp Oak Hill website</a> for more hotel options.</h4>
+    <hr>
+    <h3>Stay at the camp!</h3>
+    <h4>Rate: $0.00 a night</h4>
+    <h4>TO BOOK: We'll be emailing a form to see who wants to claim the limited number of bunk beds!</h4>
+    <hr>
+    <h3>Pitch a tent</h3>
+    <h4>Rate: Also $0.00 a night</h4>
+    <h4>TO BOOK: Let us know, and bring a tent! There is plenty of camping space.</h4>
+</div>
+
+
+
 
 {% for event in group.events.get_queryset %}
-
+<h1>Events</h1>
 <div>
     <h2>{{ event.name }}</h2>
     <h3>{{ event.date_time }}</h3>
