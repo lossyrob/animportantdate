@@ -114,7 +114,7 @@ def guest_details(request):
                 f.save()
 
 
-            messages.success(request, "Thank you! We've got your contact details and RSVP.")
+            messages.success(request, "Thank you! We've got your form answers and RSVP.")
     if not is_valid:
         messages.error(request, "There was a problem with your input! Please see below for errors.")
 

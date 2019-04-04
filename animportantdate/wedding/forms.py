@@ -21,7 +21,6 @@ class GroupForm(forms.ModelForm):
             "address_2",
             "address_3",
             "favorite_dancing_songs",
-            "changes",
             "comments"
         ]
 
@@ -139,7 +138,6 @@ class PersonForm(forms.ModelForm):
         model = models.Person
         fields = [
             "name",
-            "email",
             "rsvp_status",
             "dietary_restrictions"
         ]
