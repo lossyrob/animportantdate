@@ -8,18 +8,22 @@ from . import views
 # Register your models here.
 
 @admin.register(models.Person)
+@admin.register(models.GroupOptions)
 @admin.register(models.Event)
 class BasicAdmin(admin.ModelAdmin):
     pass
 
-
 class PersonInline(admin.TabularInline):
     model = models.Person
+
+class GroupOptionsInline(admin.TabularInline):
+    model = models.GroupOptions
 
 @admin.register(models.Group)
 class GroupAdmin(admin.ModelAdmin):
     inlines = [
         PersonInline,
+        GroupOptionsInline
     ]
 
 

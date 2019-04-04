@@ -9,6 +9,7 @@ urlpatterns = [
     url(r'^photos', views.content_page, {"page_name": "photo"}),
     url(r'^gifts', views.content_page, {"page_name": "gift"}),
     url(r'^story', views.content_page, {"page_name": "story"}),
+    url(r'^guest_guide', views.content_page, {"page_name": "guest_guide"}),
     url(r'^savethedate', views.content_page, {"page_name": "savethedate"}),
     url(r'^about', views.content_page, {"page_name": "about"}),
     url(r'^staff/mailout/([0-9]*)', views.mailout),

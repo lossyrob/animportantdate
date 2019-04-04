@@ -227,6 +227,15 @@ body.story {
   }
 }
 
+body.guest_guide {
+  background-image: url(/static/images/camp-pavillion-night.jpg);
+  background-color: #87c1e9;
+
+  h1, h2, h3, h4, h5, h6 {
+    clear: both;
+  }
+}
+
 body.detail {
   background-image: url(/static/images/camp_oak_hill.jpg);
   background-color: #063d90;

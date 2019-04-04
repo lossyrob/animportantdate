@@ -36,36 +36,73 @@
                     {% csrf_token %}
                     {% bootstrap_form group_form %}
 
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Attendees</h3>
+                </div>
+                <div class="panel-body">
+                    <p>Please fill in the RSVP an dietary restrictions for attendees. If there are any
+                        dietary restrictions not listed, please describe them the comment section above.</p>
+                    {% for person_form in person_forms %}
+                    {% bootstrap_form person_form %}
+                    <hr class="half-rule"/>
+                    {% endfor  %}
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Where you are staying</h3>
+                </div>
+                <div class="panel-body">
+                    <p>Please let us know where you'd like to stay!</p>
+                    {% bootstrap_form group_options_where_stay_form %}
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">If you'd like to stay at the camp...</h3>
+                </div>
+                <div class="panel-body">
+                    <p>We're excited that you want to stay at camp! <b>There are limited bunks</b>, so we will be in touch as soon as possible to let you know if you won't be able to accomidate. Keep in mind, all the bedding options are twin mattresses, wrapped in vinyl, in bunk formation. If you do stay in the bunks, you will need to bring your own twin bedding, pillows, towels, and toiletries. We will have a few extras on hand, but not enough for everyone. Here are some questions that will help us determine the best place for you to sleep.</p>
+                    {% bootstrap_form group_options_camp_form %}
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Moving around the camp</h3>
+                </div>
+                <div class="panel-body">
+                    <p>It's called Camp Oak HILL for a reason. The ceremony begins at the top of a hill. There is a great deal of uneven ground. You will probably do some amount of walking and standing. How can we best accommodate you?</p>
+                    {% bootstrap_form group_options_mobility_form %}
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Confirmation</h3>
+                </div>
+                <div class="panel-body">
+                    <p>Please check this box once you've read all the questions are sure you've answered them if needed!</p>
+                    {% bootstrap_form group_options_has_seen_form %}
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Don't forget to save!</h3>
+                </div>
+                <div class="panel-body">
                     {% buttons %}
                     <button type="submit" class="btn btn-primary pull-glyph-right">
                         {% bootstrap_icon "pencil" %} Save Details
                     </button>
                     {% endbuttons %}
 
-
                 </div>
             </div>
-
-            <!-- <div class="panel panel-default">
-                 <div class="panel-heading">
-                 <h3 class="panel-title">Attendees</h3>
-                 </div>
-                 <div class="panel-body">
-
-                 {% for person_form in person_forms %}
-                 {% bootstrap_form person_form %}
-                 <hr class="half-rule"/>
-                 {% endfor  %}
-                 </div>
-                 </div>
-                 <div class="panel panel-default">
-                 <div class="panel-heading">
-                 <h3 class="panel-title">Don't forget to save!</h3>
-                 </div>
-                 <div class="panel-body">
-
-                 </div>
-                 </div> -->
 
       </form>
   </div>

@@ -67,6 +67,73 @@ class Group(models.Model):
     )
 
 
+class GroupOptions(models.Model):
+    '''Attendee questions'''
+
+    group = models.ForeignKey(Group)
+
+    #     Where are you staying?
+
+    WHERE_STAY_UNKNOWN = 1
+    WHERE_STAY_CAMP = 2
+    WHERE_STAY_HOTEL =  3
+    WHERE_STAY_TENT = 4
+    WHERE_STAY_OTHER = 5
+
+    WHERE_STAY_CHOICES = (
+        (WHERE_STAY_UNKNOWN, "No Response"),
+        (WHERE_STAY_CAMP, "I'd like to stay at the camp, in one of the vintage bunk beds."),
+        (WHERE_STAY_HOTEL, "I'm getting a hotel block, as described on the website"),
+        (WHERE_STAY_TENT, "I'd like to stay at the camp in a tent (that I bring)"),
+        (WHERE_STAY_OTHER, "I'll be staying somewhere else, don't worry about it!")
+    )
+
+    where_stay = models.IntegerField(
+        choices=WHERE_STAY_CHOICES,
+        default=WHERE_STAY_UNKNOWN,
+    )
+
+    #     If staying at camp, what do you need? (Checkboxes)
+
+    camp_options_party = models.BooleanField(
+        default=False,
+        verbose_name = 'I plan on partying either until the sun rises or my body yells "hey! get some rest!"')
+    camp_options_reasonable = models.BooleanField(
+        default=False,
+        verbose_name="I love weddings, but I still need to get to bed at a reasonable hour.")
+    camp_options_heavy_sleeper = models.BooleanField(
+        default=False,
+        verbose_name='I am a heavy sleeper.')
+    camp_options_light_sleeper = models.BooleanField(
+        default=False,
+        verbose_name='I am a light sleeper.')
+    camp_options_bathroom = models.BooleanField(
+        default=False,
+        verbose_name='I need the bathroom that I use to be in the same building as I sleep.')
+    camp_options_ac = models.BooleanField(
+        default=False,
+        verbose_name='I need air conditioning.')
+
+    #     Mobility questions
+
+    number_of_rides = models.IntegerField(
+        default=0,
+        verbose_name='How many people in your group would like a ride up the hill to the ceremony and back down at the conclusion?'
+    )
+
+    number_of_seated = models.IntegerField(
+        default=0,
+        verbose_name='How many people in your group would like to sit throughout the ceremony?')
+
+    other_mobility = models.TextField(
+        verbose_name="Are there other mobility questions that we aren't considering that we should be aware of?",
+        blank=True)
+
+    has_reviewed = models.BooleanField(
+        default=False,
+        verbose_name='I have reviewed these questions and are all set with our answers!'
+    )
+
 class Person(models.Model):
 
     def __str__(self):
@@ -90,7 +157,27 @@ class Person(models.Model):
         default=RSVP_UNKNOWN,
     )
     name_flagged = models.BooleanField()
-    dietary_restrictions = models.CharField(max_length=255, blank=True)
+
+    DIET_NONE = 1
+    DIET_VEGETARIAN = 2
+    DIET_VEGAN = 3
+    DIET_KOSHER = 4
+    DIET_GLUTEN_FREE = 5
+    DIET_OTHER = 6
+
+    DIET_CHOICES = (
+        (DIET_NONE, "None"),
+        (DIET_VEGETARIAN, "Vegetarian"),
+        (DIET_VEGAN, "Vegan"),
+        (DIET_KOSHER, "Kosher"),
+        (DIET_GLUTEN_FREE, "Gluten Free"),
+        (DIET_OTHER, "Other"),
+    )
+
+    dietary_restrictions = models.IntegerField(
+        choices=DIET_CHOICES,
+        default=DIET_NONE,
+    )
 
 
 class Event(models.Model):

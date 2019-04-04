@@ -1,0 +1,193 @@
+{% extends "bootstrap_theme/base.html" %}
+
+{# Load the tag library #}
+{% load bootstrap3 %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Wilson Emanuele Wedding Guest Guide</h1>
+</div>
+
+{% if not request.session.group_id %}
+<p class="alert alert-info">To see the guest guide, enter the confirmation code we sent on the
+    <a href="/">home</a> page.
+</p>
+
+{% else %}
+
+<p>Annie and Rob will be getting married on <b>June 8th, 2019</b> in the beautiful hills of rural Pennsylvania. This document will help guests have the information they need to get the most out of this celebration!</p>
+
+<h2>The Venue</h2>
+<img src="{% static "images/camp_oak_hill.jpg" %}" alt="Camp Oak Hill" style="width: 80%; margin-left: auto; margin-right: auto; display: block; margin-top: 35px; margin-bottom: 35px"/>
+<p>
+
+    The wedding will be held at Camp Oak Hill. This is a small summer camp on 50 acres in Nottingham, PA. <a href="https://www.campoakhillpa.org/">Their website</a> has information, though it is certainly lacking some pages! They also have an <a href="https://www.airbnb.com/rooms/3718231">AirBnB listing</a> that has plenty of pictures and more information.
+</p>
+<p>
+    The ceremony will be held in a field and a auditorium at the top of the hill, while the dinner and  reception will be held in a pavillion at the bottom.
+
+
+</p>
+
+
+<h3>Directons</h3>
+<img src="{% static "images/camp-entry.jpg" %}" alt="Camp Entry" style="width: 350px; float: right; margin: 0 0 .5em 1em;"/>
+<p>
+    Camp Oak Hill is located in Nottingham, PA, about 40 minutes drive south of Lancaster. The best way to get directions is to use <a href="https://goo.gl/maps/Vmm8A1yP9PE2">Google Maps</a>! Just click on the link, click ‘Directions’, and place in your starting address. The venue is surrounded by horse farms, so you should be able to pick out the camp once you start driving along Camp Road. We’ll also have some signs or balloons to make it clear where the celebration is happening.
+
+</p>
+<p>
+    This image is of the venue from the street in case that helps!
+</p>
+
+
+</p>
+
+<h2>Schedule</h2>
+
+<div style="background: #fff; padding: 10px; margin: 5px">
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Start Time</th>
+            <th scope="col"></th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">4:00 pm</th>
+            <td>Everyone gathers in the field at the top of the camp for the start of the ceremony</td>
+        </tr>
+        <tr>
+            <th scope="row">5:00 pm</th>
+            <td>Cocktail hour</td>
+        </tr>
+        <tr>
+            <th scope="row">6:00 pm</th>
+            <td>Dinner</td>
+        </tr>
+        <tr>
+            <th scope="row">7:30 pm</th>
+            <td>Dancing!</td>
+        </tr>
+        <tr>
+            <th scope="row">9:00 pm</th>
+            <td>First shuttle back to Fairfield Inn</td>
+        </tr>
+        <tr>
+            <th scope="row">10:00 pm</th>
+            <td>‘Official’ party ends</td>
+        </tr>
+        <tr>
+            <th scope="row">10:15 pm</th>
+            <td>Final shuttle back to Fairfield Inn</td>
+        </tr>
+        <tr>
+            <th scope="row">10:30 pm</th>
+            <td>Afterparty! No end time!</td>
+        </tr>
+
+    </tbody>
+</table>
+</div>
+
+<h2>About the Ceremony</h2>
+
+<p>
+    <i>“There are a thousand ways to kneel and kiss the ground.” - Rumi</i>
+</p>
+<p>
+    One of Annie’s favorite ways to kiss the ground is by taking familiar performance forms and playfully messing with them. Why would the wedding be any different?
+</p>
+<p>
+    The ceremony is two parts. The first part will take place in the field adjacent to the amphitheater. It will take place in the grass, in the round! It will follow an untraditional structure! It will be gently participatory.
+</p>
+<p>
+    The second part takes place at the Camp’s amphitheater. It will look and feel familiar to a traditional ceremony, with vows and kisses. However, the amphitheater can really only accommodate 100 people. If you are able to stand for 10 minutes and  are not a family member, please consider standing for part 2.
+</p>
+<p>
+    There will be a short walk between the field and the amphitheater, between parts 1 and 2.
+</p>
+
+
+<h2>Dress Code</h2>
+
+<h3>About Footwear:</h3>
+<p>
+    <img src="{% static "images/dancing.jpeg" %}" alt="Camp Entry" style="width: 250px; float: right; margin: 0 0 .5em 1em;"/>
+    This place is called Camp Oak <b>HILL</b> for a reason. In order to get to the ceremony, there will be a short but real hike up a hill (and then of course back down it after the ceremony). We suggest flat shoes, or any footwear you feel comfortable walking across grass in. Of course, after dinner there will be a dance party. If you are a person who can really rock the dance floor in stilettos, god bless you, bring a pair to change into after the ceremony, and please teach us a few tricks. Otherwise, go ahead and leave those heels at home and wear that pair that hits that beautiful intersection between arch support and style.
+</p>
+
+<p>Look at these dancing people. What sensible footwear they are wearing in order to properly cut a rug. (This is an actual sign at the camp.)</p>
+
+<h3>About style:</h3>
+
+<p><b>Garden Party Attire</b>. With Pizzazz.</p>
+
+<p>Providing it doesn’t rain, most of the activities will be outside or at least in the open air. We encourage folks to dress in the garden party vibe that makes them feel the most fabulous.</p>
+
+
+<h2>Getting Around the Camp</h2>
+<p><i> What if I don’t get along with: hiking, walking distances, and standing for long periods of time?</i></p>
+
+<p>
+    No problem! We will have transportation up the hill to the ceremony site for anyone who needs some assistance for the climb! Down the hill, you’re on your own. Just roll or something. Let Rob know if you need a push. Just kidding.
+</p>
+<p>
+    We’ll also have plenty of seating for anyone for whom standing for 15 minutes doesn’t sound like fun. Please contact us if you have other concerns about what we’re asking of our guests, physically.
+
+
+</p>
+
+<h2>Accommodations</h2>
+
+<p>There a several hotels around the area, several of which can be found on the <a href="https://www.campoakhillpa.org/local-information/local-lodging/nearest-lodging/">camp’s website</a>. We have reserved some rooms in a block at two hotels:
+    <a href="https://www.marriott.com/meeting-event-hotels/group-corporate-travel/groupCorp.mi?resLinkData=Wilson-Emanuele%20Wedding%5Ephlks%60WEWWEWA%7CWEWWEWB%60179.00%60USD%60false%604%606/7/19%606/9/19%605/10/19&app=resvlink&stop_mobi=yes">Fairfield Inn & Suites Kennett Square</a> (<a href="https://goo.gl/maps/S8GbXPD9rYq">map</a>) and <a href="https://www.bestwestern.com/en_US/book/hotel-rooms.21048.html?iata=00171880&ssob=BLBWI0004G&cid=BLBWI0004G:google:gmb:21048">Best Western North East Inn</a> (<a href="https://goo.gl/maps/tVfqE5Qc7tz">map</a>).</p>
+
+<p>To book rooms under the blocks, call the hotels and say you want to book under the Wilson Emanuele Wedding block. The blocks can only accommodate so many guests. The sooner you reserve your accommodation, the more likely you will be able to get the block discount.
+</p>
+
+
+<ul>
+    <li><u>Best Western rate</u>: $136 per night</li>
+    <li><u>Fairfield Inn rate</u>: $179 per night</li>
+</ul>
+
+<p>These rates are for Friday and Saturday nights.</p>
+
+<p>There will be a shuttle (a school bus) from Fairfield Inn at 3:15pm to bring guests to the ceremony. A shuttle returning to Fairfield from the camp leaves at 9:00pm and 10:15pm.
+</p>
+
+<p>
+    There is also bunk beds at the camp. If you want to stay in a bunk bed, let us know through the form or the website used for RSVP’ing! Check out the <a href="https://www.airbnb.com/rooms/3718231?guests=1&adults=1">Camp Oak Hill AirBnB listing</a> to see pictures of the bunks and get a sense of what staying at the camp would be like. Space is limited so let us know ASAP if you’d like a bunk. You’ll need to bring your own pillow, covers  and sheets for a twin bed - we’ll have some backups for out-of-towners, but please bring your own if you can!
+</p>
+
+<p>You’re also free to pitch a tent and camp on the campgrounds if that’s more your speed!</p>
+
+<h2>While you’re here</h2>
+
+<p>There’s lots to do if you arrive early.</p>
+
+<h3>On The Camp</h3>
+
+<p><b>Pool</b>: There’s a shallow swimming pool at the camp. Bring towels and noodles!</p>
+
+<p><b>Hiking</b>: There are several trails on the Camp property. Take some time to walk in the sun (oh do we hope it’s sunny).</p>
+
+<h3>Near The Camp</h3>
+
+<p><b><a href="https://www.facebook.com/theoctorarotavern/">Octoraro Hotel and Tavern</a></b>: Fun fact: It’s not actually a hotel. But it’s got cheap drinks and several pool tables.</p>
+
+<p><b><a href="https://www.timberlanes.net/">Timberlanes/Oxford Strike ‘N Spare</a></b>: A bowling alley about a 20-minute drive from camp</p>
+
+<p><b><a href="http://www.herrs.com/snackfactorytours.html">Herr’s Snack Factory Tour</a></b>: See where the magic happens.</p>
+
+<p><b><a href="http://www.conowingodam.org/">Conowingo Dam</a></b>: A dam about 20 minutes from the camp where bald eagles are often sighted (go birds!)</p>
+
+    <h2 style="text-align: center">Remember to RSVP by May 15th!</h2>
+
+{% endif %}
+
+{% endblock %}

@@ -53,31 +53,80 @@ def guest_details(request):
         prefix="group",
     )
 
-    # person_forms = list(map(
-    #     lambda tup: forms.PersonForm(
-    #         request.POST or None,
-    #         instance=tup[1],
-    #         prefix="person_{}".format(tup[0])
-    #     ), enumerate(group.person_set.all())))
+    person_forms = list(map(
+        lambda tup: forms.PersonForm(
+            request.POST or None,
+            instance=tup[1],
+            prefix="person_{}".format(tup[0])
+        ), enumerate(group.person_set.all())))
 
-    if request.POST and group_form.is_valid():
-        group_form.save()
-        messages.success(request, "Thank you! We've got your contact details.")
-        # mail_alerts.group_contact_update(group)
+    group_options = group.groupoptions_set.all()
+    if not group_options:
+        group_options = models.GroupOptions.objects.create(group=group)
+    else:
+        group_options = group_options[0]
 
-    # if request.POST and group_form.is_valid() and all(map(lambda f: f.is_valid(), person_forms)):
-    #     group_form.save()
-    #     for f in person_forms:
-    #         f.save()
-    #     messages.success(request, "Thank you! We've got your contact details.")
-    #     mail_alerts.group_contact_update(group)
+    group_options_where_stay_form = forms.GroupOptionsWhereStayForm(
+        request.POST or None,
+        instance=group_options,
+        prefix="group_options_where_stay",
+    )
 
+    group_options_camp_form = forms.GroupOptionsCampForm(
+        request.POST or None,
+        instance=group_options,
+        prefix="group_options_camp",
+    )
+
+    group_options_mobility_form = forms.GroupOptionsMobilityForm(
+        request.POST or None,
+        instance=group_options,
+        prefix="group_options_mobility",
+    )
+
+    group_options_has_seen_form = forms.GroupOptionsHasReviewedForm(
+        request.POST or None,
+        instance=group_options,
+        prefix="group_options_hasseen",
+    )
+
+    group_option_forms = [
+        group_options_where_stay_form,
+        group_options_camp_form,
+        group_options_mobility_form,
+        group_options_has_seen_form
+    ]
+
+    is_valid = not request.POST
+    if request.POST and group_form.is_valid() and all(map(lambda f: f.is_valid(), person_forms)):
+        if any(map(lambda f: f.clean().get("rsvp_status") == 2, person_forms)):
+            is_valid = all(map(lambda f: f.is_valid(), group_option_forms))
+        else:
+            is_valid = True
+
+        if is_valid:
+            group_form.save()
+
+            for f in person_forms:
+                f.save()
+
+            for f in group_option_forms:
+                f.save()
+
+
+            messages.success(request, "Thank you! We've got your contact details and RSVP.")
+    if not is_valid:
+        messages.error(request, "There was a problem with your input! Please see below for errors.")
 
     data = {
         "group_form": group_form,
-        # "person_forms": person_forms,
+        "person_forms": person_forms,
         "group": group,
         "body_class": "guest",
+        "group_options_where_stay_form": group_options_where_stay_form,
+        "group_options_camp_form": group_options_camp_form,
+        "group_options_mobility_form": group_options_mobility_form,
+        "group_options_has_seen_form": group_options_has_seen_form
     }
 
     return render(request, "wedding/guest_details.html", data)
