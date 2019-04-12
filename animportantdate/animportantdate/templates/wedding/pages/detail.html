@@ -4,7 +4,7 @@
 
 {% block content %}
 <div class="page-header">
-  <h1>Where &amp; When</h1>
+  <h1>Event Information</h1>
 </div>
 
 <p>Our big day and celebrations are taking place in June of 2019 near Lancaster, PA. You&rsquo;ll find details about all of the events on this page as plans come together.</p>
@@ -15,44 +15,11 @@
 </p>
 
 {% else %}
-
-<p class="alert alert-info">Below you&rsquo;ll find details about the invite-only events including date, time, and location as well as travel and lodging advice. Make sure to keep
-    <a href="/guest">your information</a> up to date so we can stay in touch with you and yours.</p>
-
-<div>
-    <h1>Hotels</h1>
-    <h3>Fairfield Inn & Suites Kennett Square Brandywine Valley (<a href="https://goo.gl/maps/pYvV6GJzEEM2">map</a>)</h3>
-    <h4>Rate: $179.00 a night</h4>
-    <h4><b>NOTE: This is the only hotel that will have a shuttle.</b></h4>
-    <h4><a href="http://www.marriott.com/meeting-event-hotels/group-corporate-travel/groupCorp.mi?resLinkData=Wilson-Emanuele%20Wedding%5Ephlks%60WEWWEWA%7CWEWWEWB%60179.00%60USD%60false%604%606/7/19%606/9/19%605/10/19&app=resvlink&stop_mobi=yes">LINK FOR BOOKING</a></h4>
-    <hr>
-    <h3>Best Western Northeast Inn (<a href="https://goo.gl/maps/5JLNFtPA24m">map</a>)</h3>
-    <h4>Rate: $135.99 a night</h4>
-    <h4>TO BOOK: Call (410) 287-5450 and book for "Wilson Emanuele Wedding"</h4>
-    <hr>
-    <h3>Choose your own!</h3>
-    <h4>Rate: $???.?? a night</h4>
-    <h4>See <a href="https://www.campoakhillpa.org/local-information/local-lodging/">this page at the Camp Oak Hill website</a> for more hotel options.</h4>
-    <hr>
-    <h3>Stay at the camp!</h3>
-    <h4>Rate: $0.00 a night</h4>
-    <h4>TO BOOK: We'll be emailing a form to see who wants to claim the limited number of bunk beds!</h4>
-    <hr>
-    <h3>Pitch a tent</h3>
-    <h4>Rate: Also $0.00 a night</h4>
-    <h4>TO BOOK: Let us know, and bring a tent! There is plenty of camping space.</h4>
-</div>
-
-<div>
-    <h1>Shuttle</h1>
-    <h3>There  will be a shuttle (a school bus) to and from Fairfield Inn & Suites Kennett Square Brandywine Valley.</h3>
-    <h4>Shuttle to wedding: leaves 2:45pm</h4>
-    <h4>Shuttles back to hotel: 9:00pm and 11:00pm</h4>
-    <h5>Note: The checkin for the hotel is 3:00pm. We are currently working out a solution to this so attendees can get into their rooms sooner or at least drop of their items! Apologies for the inconvenience.</h5>
-</div>
-
-{% for event in group.events.get_queryset %}
+<p class="alert alert-info">For more information, such as dress code, lodging information, and a more detailed schedule, please <a href="/guest_guide">see our Guest Guide.</a>
+</p>
 <h1>Events</h1>
+{% for event in group.events.get_queryset %}
+
 <div>
     <h2>{{ event.name }}</h2>
     <h3>{{ event.date_time }}</h3>
