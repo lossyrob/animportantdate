@@ -133,7 +133,7 @@ def guest_details(request):
 
 
 def authenticate(request, pnr):
-    group = models.Group.objects.get(pnr=pnr)
+    group = models.Group.objects.get(pnr=pnr.upper())
     request.session["group_id"] = group.id
 
 
